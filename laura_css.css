@@ -1,0 +1,2270 @@
+/*
+	This is my CSS sheet
+
+  /* Table of Contents
+
+  - Fonts
+  - New Links & Buttons
+  - Site Containers
+  - Site Header Homepage
+  - Primary Navigation
+	- Mailchimp Subscribe Form
+	- Lazy Load CSS
+	- Homepage Classes
+		- General + Float Thing
+		- Featured Content
+		- About Me
+		- Recent Posts
+		- Travel guides
+		- Greenville
+	- Footer Classes
+		- instagram
+		- rest of footer
+	- Additional Pages
+		- standard page
+		- Blog Page
+		- Category Page & Archive page & Search
+	- Single post
+		- CSS classes for blocks for the posts
+		- Quick links
+		- Trail guide
+	- Places page
+	- Destination Guide
+	- Shortcodes
+	- Sidebar
+	- General Media Queries
+	- Custom Colors
+
+
+
+
+
+  */
+
+/* # Laura Additions
+---------------------------------------------------------------------------------------------------- */
+
+
+/* ## New Fonts - Laura Added
+---------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	color: #333;
+}
+
+h1 {
+	font-size: 27px;
+}
+
+h2 {
+	font-size: 38px;
+}
+
+.home h2 {
+	font-size:3rem;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 28px;
+}
+
+
+h5 {
+	font-size: 24px;
+}
+
+h6 {
+	font-size: 30px;
+	font-family: 'Underland', cursive;
+	font-weight: normal;
+	margin-bottom:28px;
+}
+
+body, p {
+	font-family: 'Lora', Arial, sans-serif;
+	font-weight: 400;
+}
+
+/* ## New Links & Buttons
+---------------------------------------------*/
+
+a {
+	color: #9b4a2f;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #608769;
+	text-decoration: none;
+}
+
+.alt-link {
+	color:white;
+}
+
+.alt-link:hover,
+.alt-link:focus {
+	color: #9b4a2f;
+	text-decoration: none;
+}
+
+.button, .button:visited, .button:active {
+	border-radius: 2px;
+	background: transparent;
+	font-family: 'Lora', serif;
+	font-weight: 700;
+	text-align:center;
+  vertical-align: middle;
+  overflow: hidden;
+	text-transform: capitalize;
+	border:3px solid #563A4B;
+	transition: all .25s linear;
+	color: #563A4B;
+	font-size:18px;
+}
+
+.button:hover, .button:focus {
+	background: #563A4B;
+	border:3px solid #563A4B;
+	color: #fff!important;
+}
+
+.button2, .button2:visited, .button2active {
+	color: #fff;
+	border:3px solid #fff;
+}
+
+.button2:hover, .button2:focus {
+	background: #fff;
+	color: #563A4B!important;
+	border:3px solid #563A4B;
+}
+
+.button-alt, .button-alt:visited, .button-alt:active {
+	background: #563A4B;
+	border:3px solid #563A4B!important;
+	color:white;
+}
+
+.button-alt:hover, .button-alt:focus {
+	background-color:transparent;
+	color: #563A4B!important;
+}
+
+
+/* ## Site Containers - Laura Edited
+--------------------------------------------- */
+
+.home .site-inner {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+@media only screen and (min-width: 960px) {
+	.home .site-inner {
+		max-width: 1440px;
+	}
+
+	.home .content {
+		width: 100%;
+	}
+
+	.single .site-inner {
+		margin-top: 0;
+	}
+}
+
+
+/* ## Popup Search Form - Laura Added
+------------------------------- */
+
+.laura_search_popup_box {
+	display: none;
+	z-index: 200;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.laura_search_popup {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.laura_search_popup_box .search-form  {
+	background: #fff;
+	border-radius: 3px;
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+	padding: 10px;
+	display: none;
+}
+
+.laura_search_popup_box .search-form input[type="search"] {
+	color: #5d5d5d;
+	font-size: 25px;
+	line-height: 30px;
+	outline: none;
+	border: none;
+}
+
+.laura_search_popup_box .search-form input[type="submit"] {
+	background: transparent no-repeat center center;
+	background-size: 20px 19px;
+	border: none;
+	width: 42px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 0;
+	display: none;
+}
+
+
+
+/* ## Site Header Homepage - Laura Added
+--------------------------------------------- */
+
+.laura_homepage_hero {
+	height:100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.home .site-header {
+	background-color: transparent;
+  position: inherit;
+}
+
+@media only screen and (min-width: 960px) {
+	/*removing the sticky header*/
+	.site-header {
+		position:initial;
+	}
+}
+
+.home-main-tagline {
+  display: block;
+	max-width: 50%;
+	text-align: center;
+	padding: 20% 0 0 5%;
+	text-align: left;
+}
+
+.home-tagline-top {
+  color: white;
+  font-family: Oswald, Lora, arial, sans-sans-serif;
+	font-weight: normal;
+	font-size: 3.75rem;
+}
+
+.home-tagline-bottom {
+  color: white;
+  font-family: Lora, serif;
+  font-weight: normal;
+	font-size: 1.875rem!important;
+}
+
+.home-tagline-final {
+  color: white;
+  font-family: Underland, Lora, serif;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 1023px) {
+/* small desktop*/
+
+	.home-main-tagline {
+		max-width: 75%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+/* big mobile*/
+
+	.home-main-tagline {
+		max-width: 95%;
+		padding:25% 0 0 5%;
+	}
+
+  .home-tagline-top {
+		font-size:2.5rem;
+  }
+
+  .home-tagline-bottom {
+		font-size:1.25rem!important;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+/* big mobile*/
+
+.home-main-tagline {
+	max-width: 95%;
+	padding:45% 0 0 5%;
+}
+
+.home-tagline-final {
+	font-size:1.875rem!important;
+}
+
+.laura_homepage_hero {
+	background-position: 60%
+}
+
+
+}
+
+/* ## Primary Navigation - Laura Added
+---------------------------------------------*/
+
+.site-title {
+  font-family: love ya like a sister, sans-serif;
+  font-weight: normal;
+}
+
+.home .site-title {
+  padding: 0;
+}
+
+.home .site-title a {
+  color:#ffffff;
+}
+
+.menu-toggle:focus, .menu-toggle:hover, .sub-menu-toggle:focus, .sub-menu-toggle:hover {
+	color:#608769;
+}
+
+.home .menu-toggle {
+  color:white;
+}
+
+.nav-primary {
+	font-family:Arial,sans-serif;
+}
+
+.genesis-nav-menu a:hover,
+.home .genesis-nav-menu a:focus, .genesis-nav-menu .current-menu-item > a {
+	color:#608769;
+}
+
+@media only screen and (min-width: 960px) {
+	/* For Desktop */
+	.nav-primary {
+		z-index:100;
+    clear: none;
+    float: right;
+    width: auto;
+	}
+
+	.nav-primary a {
+		font-size:18px;
+		font-weight:500;
+	}
+
+  .genesis-responsive-menu {
+    padding: 20px 0;
+  }
+
+  .site-title {
+    font-size:1.875rem;
+  }
+
+	/* Homepage Specific */
+	.home .genesis-nav-menu a {
+		color: #fff
+	}
+
+	.home .sub-menu a {
+		color:#333;
+	}
+
+	/* Homepage Specific */
+	.home .genesis-nav-menu a:hover,
+	.home .genesis-nav-menu a:focus {
+		color: #000;
+		opacity:.5;
+	}
+
+}
+
+@media only screen and (max-width: 959px) {
+	/* For Mobile*/
+
+  .home .nav-primary {
+    background-color: #fff;
+    padding: 0 30px;
+  }
+
+	.genesis-nav-menu a {
+		padding: 20px 0!important;
+	}
+}
+
+/* ## Mailchimp Subscribe Form - Laura Added
+---------------------------------------------*/
+
+.my-subscribe-form {
+	margin:0 auto;
+}
+
+#mc_embed_signup input.email {
+	font-family: 'lora', serif;
+	font-size: 18px;
+	padding: 10px;
+	border-radius: 2px;
+	display: block;
+	float: left;
+	width:auto;
+	margin-bottom: 30px;
+	max-width: 50%;
+	margin-right:10px;
+}
+
+#mc_embed_signup input.button {
+	display: block;
+	padding:10px 20px;
+	float:left;
+	font-size: 18px;
+  padding: 10px 20px;
+  font-family: 'lora',serif;
+  border: 1px solid #563A4B;
+	width:auto;
+}
+
+#mc_embed_signup .button {
+		background-color: #563A4B;
+    border-radius: 2px;
+		transition: all 0.23s ease-in-out 0s;
+}
+
+#mc_embed_signup .button:hover {
+	background-color: #f9f9f9;
+	color: #563A4B!important;
+	outline:none;
+}
+
+
+.moar-subscribe {
+  background-color: #a1887e;
+	margin:0 auto;
+}
+
+.subscribe-section {
+	padding: 20px;
+	max-width: 1180px;
+	margin:0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.white-header {
+	width:60%;
+	margin-top:30px;
+}
+
+.white-header h2, .white-header p {
+	color: #fff;
+}
+
+.my-subscribe-form2 {
+	width:30%;
+	margin-top:30px;
+}
+
+@media only screen and (max-width: 768px) {
+	/* Mobile */
+
+	.white-header, .my-subscribe-form {
+		width:100%;
+	}
+
+	.subscribe-section {
+		display:block;
+	}
+
+}
+
+/* ## Lazy Load CSS - Laura Added
+---------------------------------------------*/
+
+/* Image with 'data' attribute is hidden */
+img[data-lazy-src] {
+/* we set the opacity to 0 */
+   opacity: 0;
+}
+/* Image without 'data' attribute is (or becomes) visible */
+img.lazyloaded {
+/* prepare the future animation */
+   -webkit-transition: opacity .25s linear 0.2s;
+       -moz-transition: opacity .25s linear 0.2s;
+                 transition: opacity .25s linear 0.2s;
+/* we set the opacity to 1 to do the magic */
+   opacity: 1;
+}
+
+/* ## Homepage Classes - Laura Added
+---------------------------------------------*/
+
+/* ## Homepage Section: General
+----------------------------*/
+
+.remove_title .entry-title {
+	display: none;
+}
+
+
+.homepage-section {
+	padding: 50px 50px;
+	margin: 0 auto;
+	max-width: 1180px;
+	position:relative;
+	width:100%
+}
+
+.homepage-section-first {
+	padding-top: 0px!important;
+}
+
+.homepage-section-full {
+	margin: 0 auto;
+	position:relative;
+	width:100%;
+	padding:50px 0;
+}
+
+.flex-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-flow: wrap;
+}
+
+.home .entry {
+	display: none;
+}
+
+.homepage-section-button {
+	text-align: center;
+}
+
+.section-header {
+	margin-bottom: 25px;
+	color:#333;
+	vertical-align: middle;
+}
+
+.section-header-sub {
+	font-size:18px;
+	font-family:Lora, serif;
+	font-weight:normal;
+	vertical-align: middle;
+}
+
+@media only screen and (min-width: 426px) {
+
+	.sub-mobile {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 425px) {
+
+	.sub-desktop {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+	/* Mobile */
+
+.homepage-section {
+		padding:40px 5%;
+		}
+
+	}
+
+/* ## Homepage Section: Featured Content
+----------------------------*/
+
+
+.featured-section {
+  padding: 0;
+  float: left;
+	border: 5px solid white;
+}
+
+.featured-top {
+		width: 33.33333333%;
+}
+
+.featured-bottom {
+	width: 50%;
+}
+
+.featured-section a {
+	position: relative;
+	display: block;
+}
+
+.featured-section img {
+	vertical-align: middle;
+	outline: 2px white solid;
+  outline-offset: -10px;
+}
+
+.featured-text2 {
+	position: absolute;
+	z-index: 1;
+	top: 35%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	transform: scale(1, 1);
+	transition: all .25s ease-out;
+	text-transform: uppercase;
+	text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+	margin: 0 10px 0;
+}
+
+.featured-text2 h4 {
+	color:white;
+	font-size:2.8rem;
+}
+
+.featured-text2 h6 {
+	margin-bottom: 0;
+	Font-family: 'Underland', "Lora", serif;
+	text-transform: lowercase;
+	color: white;
+	font-size: 1.25rem;
+}
+
+.featured-section a:hover .featured-text2 {
+	transform: scale(1.1, 1.1);
+	transition: all .25s ease-out;
+}
+
+.featured-section a::before {
+		position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(56,54,57,0.6);
+    content: '';
+    transition: all .25s ease-out;
+		opacity:.3
+}
+
+.featured-section a:hover::before {
+    transition: all .25s ease-out;
+		opacity:1
+}
+
+@media only screen and (max-width: 1439px) {
+
+	.featured-top img {
+		height:300px;
+	}
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.featured-section h4 {
+		font-size:1.875rem;
+	}
+
+	.featured-section h6 {
+		font-size:1rem;
+	}
+
+	.featured-top img {
+		height:250px;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.featured-section{
+		width:50%;
+	}
+
+	.featured-section img {
+		height: 200px!important;
+		width: 100%;
+	}
+
+}
+
+
+@media only screen and (max-width: 425px) {
+
+	.featured-section {
+		width:100%;
+		padding:0 10px;
+	}
+
+}
+
+/* ## Homepage Section: About Me
+----------------------------*/
+
+.home-aboutimage-section {
+	width:50%;
+	position:relative;
+	float:left;
+	padding:0 50px;
+	text-align: center;
+}
+
+.home-aboutimage-section::before {
+	right: auto;
+	left: 0px;
+	background: #608769;
+	content: "";
+	display: block;
+	height: calc(100% - 120px);
+	position: absolute;
+	top: 60px;
+	width: 200%;
+	z-index: -1;
+	opacity: .5;
+}
+
+.home-aboutimage-section img {
+		box-shadow: 0 20px 80px rgba(0,0,0,.2);
+    border: 10px solid #fff;
+		max-width:400px;
+}
+
+.home-abouttext-section {
+	width:50%;
+	float:right;
+	padding:0 50px 0 0;
+	font-weight: normal;
+	color:#333;
+	position:relative;
+	top:90px;
+}
+
+.home-subtext {
+	text-transform: uppercase;
+  font-size: 1rem;
+	margin-bottom: 5px;
+	color:#333;
+}
+
+.home-tagline {
+	color:#333;
+}
+
+.home-abouttext {
+	font-family:Lora, sans-serif;
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.home-aboutimage-section::before {
+		display:none;
+	}
+
+	.home-abouttext-section {
+		top:0;
+		width:60%;
+		padding:0;
+	}
+
+	.home-aboutimage-section {
+		width:40%;
+		padding:0 20px 0 0;
+	}
+
+	.home-aboutimage-section img {
+		width:100%;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.home-abouttext-section {
+		clear:right;
+		width:100%;
+		padding:0;
+	}
+
+	.home-aboutimage-section {
+		width:100%;
+		padding:0;
+		text-align:center;
+	}
+
+	.home-aboutimage-section img {
+		max-width:230px;
+		margin:0 auto;
+	}
+
+}
+
+
+/* ## Homepage Section: Recent Posts
+----------------------------*/
+
+.moarhome-posts {
+	background-color: #f9f9f9
+}
+
+.homepage-post {
+	float: left;
+	width: 33.3333333%;
+	text-align: center;
+	padding: 0 12px;
+	position: relative;
+	margin-bottom: 50px;
+	margin-left: 0;
+}
+
+.homepage-post-background {
+	background: #EEEBEA;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.post-text {
+	padding:20px;
+	min-height: 110px;
+	outline: 2px white solid;
+  outline-offset: -10px;
+}
+
+.post-text p {
+	text-align: left;
+	margin-bottom:15px;
+}
+
+.readmorelink {
+	text-align: left;
+	font-size: 14px;
+}
+
+.post-text a {
+	color:#563A4B;
+}
+
+.post-text a:hover {
+	color:#608769;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+	.homepage-post {
+		width:50%;
+	}
+
+}
+
+@media only screen and (max-width: 425px) {
+
+	.homepage-post {
+		width:100%;
+	}
+
+	.post-text {
+		min-height: initial;
+	}
+
+}
+
+/* ## Homepage Section: Travel Guides
+----------------------------*/
+
+.content-text {
+	width: 60%;
+	float:left;
+	padding-right:10%;
+}
+
+.two-buttons {
+	display:flex;
+	justify-content: space-around;
+	flex-flow: wrap;
+
+}
+
+.two-buttons .button-alt {
+	margin-bottom:20px;
+}
+
+.content-imageblock {
+	width: 40%;
+	float: right;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content-column {
+	flex: 50%;
+	max-width: 50%;
+}
+
+.travelimage {
+	position: relative;
+	border: 5px white solid;
+}
+
+.guidetext {
+		position: absolute;
+    z-index: 1;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: scale(1, 1);
+    transition: all .25s ease-out;
+    text-transform: uppercase;
+    text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+    margin: 0 10px 0;
+}
+
+.guidetext h4 {
+	color:white;
+}
+
+.travelimage a:hover .guidetext {
+	transform: scale(1.1, 1.1);
+	transition: all .25s ease-out;
+}
+
+.travelimage a::before {
+		position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(56,54,57,0.6);
+    content: '';
+    transition: all .25s ease-out;
+		opacity:.3
+}
+
+.travelimage a:hover::before {
+    transition: all .25s ease-out;
+		opacity:1
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.content-text {
+		width:100%;
+		padding-right:initial;
+	}
+
+	.content-imageblock {
+		width: 80%;
+    margin: 0 auto;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.content-imageblock {
+		width: 100%;
+    margin: 0 auto;
+	}
+
+}
+
+@media only screen and (max-width: 374px) {
+
+	.content-column {
+		flex:100%;
+		max-width:100%;
+	}
+
+}
+
+/* ## Homepage Section: Greenville
+----------------------------*/
+
+.home-greenville {
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 65vh;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding-bottom:20px;
+	box-shadow: 0 20px 80px rgba(0,0,0,.2);
+	border: 10px solid #fff;
+}
+
+.greenville-title {
+	margin: 50px 50px 0 50px;
+	text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+}
+
+.greenville-sub {
+	margin: 0px 20px;
+	text-align: right;
+}
+
+.home-greenville h3 {
+	color:white;
+	font-family:'Underland', serif;
+	font-size:6.25rem;
+}
+
+.home-greenville h5 {
+	color:white;
+	font-size:1.825rem;
+	text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+}
+
+
+@media only screen and (max-width: 767px) {
+
+	.home-greenville h3 {
+		font-size:3.8rem;
+	}
+
+	.home-greenville h5 {
+		font-size:1.825rem;
+	}
+
+}
+
+@media only screen and (max-width: 424px) {
+
+	.home-greenville h3 {
+		font-size:3.3rem;
+	}
+
+	.greenville-title {
+		margin: 20px 20px 0;
+	}
+
+}
+
+
+
+/* ## Footer Classes - Laura Added
+---------------------------------------------*/
+
+/* ## Instagram
+----------------------------*/
+
+.instagram-footer {
+	position: relative;
+	background-color: #EEEBEA;
+	border-top: 4px solid #9b4a2f;
+}
+
+.instagram-footer h6 {
+	text-align: center;
+	font-size: 44px;
+	color:#9b4a2f;
+	margin: 10px auto;
+	padding: 20px;
+}
+
+.instagram-footer .widget {
+	margin-bottom: 0;
+}
+
+#sb_instagram {
+	background-color:#9b4a2f;
+}
+
+
+.instagram-pics {
+	display: flex;
+	margin-bottom:-1px;
+}
+
+.instagram-pics li {
+	margin-bottom: 0!important;
+	flex-basis: 50%;
+}
+
+@media only screen and (max-width: 425px) {
+
+	.instagram-pics {
+		flex-wrap: wrap;
+	}
+
+	.instagram-pics li {
+		margin-bottom: -1px!important;
+		flex-basis: 50%;
+	}
+
+}
+
+/* ## Rest of the Footer
+----------------------------*/
+
+.footer-widgets {
+	background: #608769;
+	border: none;
+}
+
+.footer-widgets h6 {
+	color:white;
+}
+
+.footer-widgets-2 {
+	text-align: center;
+}
+
+.footer-widgets-3 {
+	color: white;
+  font-size: 14px;
+  text-align: right;
+}
+
+.site-footer {
+	border: none;
+	padding: 0;
+	position: relative;
+}
+
+
+.laura-copyright {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+  margin-bottom: 3px;
+}
+
+.laura-copyright p {
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+
+@media only screen and (max-width: 959px) {
+.footer-widget-area {
+	text-align:center;
+	margin-bottom:0;
+}
+
+}
+
+/* ## Additonal Pages - Laura Added
+---------------------------------------------*/
+
+/* ## Standard Page (About, Contact, etc.)
+----------------------*/
+
+.laura-page-header2 {
+	background-image: url("/wp-content/themes/genesis-child/images/About.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 300px;
+	width:100%;
+	background-position: center;
+	text-align: center;
+	max-width: 1140px;
+	margin: 0 auto 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: 2px white solid;
+	outline-offset: -10px;
+}
+
+.page .page-header {
+	color:white;
+	margin-bottom:0;
+}
+
+/* ## Blog Page (All Posts)
+----------------------*/
+
+.archive-title, .page-header {
+	font-family: 'underland', cursive;
+	font-weight: normal;
+	font-size: 70px;
+	padding: 30px 0px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 425px) {
+	.archive-title, .page-header {
+		font-size:60px;
+	}
+
+}
+
+.blog .archive-title, .blog .archive-description {
+	display: none;
+}
+
+.blog .content .entry, .archive .content .entry, .search .content .entry {
+	background: #EEEBEA;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	width:48%;
+	margin: 20px 1%;
+	float: left;
+}
+
+.blog .post-text, .archive .post-text, .search .post-text {
+	min-height:330px;
+}
+
+.archive-pagination li a:focus, .archive-pagination li a:hover, .archive-pagination li.active a {
+	background-color: #563A4B;
+}
+
+@media only screen and (max-width: 425px) {
+
+	.blog .content .entry, .archive .content .entry, .search .content .entry {
+		width:100%;
+	}
+
+	.blog .post-text, .archive .post-text, .search .post-text {
+		min-height:initial;
+	}
+
+}
+
+/* ## Category Page & Archive page & Search
+----------------------*/
+
+.category-featured-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 300px;
+	width:100%;
+	background-position: center;
+	text-align: center;
+	max-width: 1140px;
+	margin: 0 auto 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: 2px white solid;
+	outline-offset: -10px;
+
+}
+
+.category-featured-image .archive-description, .category-featured-image .archive-title {
+	margin-bottom:0;
+	color:white;
+}
+
+.search .archive-title {
+	font-size: 50px;
+}
+
+/* ## Single Post
+----------------------*/
+
+.single .entry-content {
+	max-width: 866px;
+	margin: 0 auto;
+}
+
+.single .entry-title {
+	text-align: center;
+	font-size: 44px;
+  padding-bottom: 3rem;
+}
+
+.single .entry-header img {
+	margin-bottom: 20px;
+}
+
+.entry-header .entry-meta {
+	margin-bottom:10px;
+}
+
+hr {
+	border-top: 2px solid #608769;
+	margin: 3rem 0 4rem;
+}
+
+.laurahr2 {
+	border-top: 1px solid #a1887e;
+	margin: 3rem 0 5rem;
+}
+
+.laurahraffiliate {
+	margin:0 0 30px;
+}
+
+.post-2img-1 {
+	float: left;
+	margin-right: 2% !important;
+	width: 49%;
+}
+
+.post-2img-2 {
+	float: right;
+	margin-left: 0 !important;
+	width: 49% !important;
+}
+
+.gallery img {
+	border: none;
+}
+
+.gallery img:hover,
+.gallery img:focus {
+	border: none;
+}
+
+.post_pinterest {
+	max-width: 400px!important;
+	margin:0 auto;
+}
+
+/* Related Posts */
+
+.single .related-posts {
+	width:100%;
+	margin-bottom:3rem;
+}
+
+.single .related-posts h3{
+	text-align: center;
+	font-size: 44px
+}
+
+.single .related-posts div{
+	width:33%;
+	float:left;
+	border: solid white 5px;
+}
+
+@media only screen and (max-width: 375px) {
+	.single .related-posts div{
+		width:100%;
+	}
+}
+
+/*Comments*/
+
+.form-submit input[type="submit"] {
+	background-color: #EEEBEA;
+		color:#563A4B;
+		border: 1px solid #563A4B;
+}
+
+.form-submit input:hover[type="submit"] {
+	background-color: #563A4B;
+}
+
+input:hover[type="submit"] {
+	color: #fff!important;
+}
+
+.comment-respond {
+	width: 80%;
+  margin: 0 auto;
+}
+
+.comment-list article {
+	background-color: #f9f9f9;
+	padding: 20px;
+	border: 1px solid #563A4B;
+}
+
+.comment-author {
+	font-size:20px;
+}
+
+.comment-list .children article {
+	background-color: #ccc;
+}
+
+/*Media + Text and Gallery Fixes*/
+
+.wp-block-gallery ul {
+	padding-left: 0px;
+}
+
+.lauragreenvillemedia {
+	margin-bottom:30px;
+}
+
+.laurasymbol p {
+	    font-size: 16px !important;
+    font-style: italic !important;
+	margin-bottom: 10px !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.lauragreenvillemedia .wp-block-media-text__content {
+		padding-left:0;
+	}
+  }
+
+
+
+/* ## CSS Classes for blocks for the posts
+----------------------*/
+
+.laura-boxshadow {
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+}
+
+.laura-auto {
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.laura-marginbottom {
+	margin-bottom: 10px!important;
+}
+
+.laura-marginbottomzero {
+	margin-bottom: 0px!important;
+}
+
+.laura-padding {
+padding: 1px 20px;
+}
+
+.laura-padding2 {
+padding: 30px 50px!important;
+}
+
+.laura-padding0 {
+	padding:0px!important;
+}
+
+@media (min-width: 782px) {
+.laura-smallcolumn .wp-block-column:not(:first-child) {
+	margin-left: 10px;
+}
+}
+
+
+.laura-gear .wp-block-column {
+	flex-basis:50%;
+}
+
+@media (min-width: 600px) {
+
+.laura-gear .wp-block-column:not(:last-child), .laura-gear .wp-block-column:nth-child(odd) {
+	margin-right:0;
+	}
+
+}
+
+@media (min-width: 600px) {
+
+.laura-gear .wp-block-column:not(:first-child), .laura-gear .wp-block-column:nth-child(2n) {
+	margin-left:0;
+	}
+
+}
+
+.trailguide {
+	padding: 1rem;
+	border: 1px solid #ccc;
+  background-color: #EEEBEA;
+	margin-bottom:0;
+}
+
+.laura-flexend {
+	align-items: flex-end;
+}
+
+.laura-relative {
+	position: relative;
+}
+
+.laura-relative .wp-block-media-text__content
+{
+	position: absolute;
+	width: 70%;
+}
+
+.laura-frame {
+	box-shadow: 0 20px 80px rgba(0,0,0,.2);
+	border: 10px solid #fff;
+}
+
+.laura-outline {
+	outline: 2px white solid;
+  outline-offset: -10px;
+}
+
+.laura-outline .ab-block-layout-column-inner {
+	outline: 2px white solid;
+  outline-offset: -10px;
+}
+
+.laura-fontoswlad {
+	font-family: 'Oswald', arial, sans-serif;
+}
+
+.laura-fontunderland {
+	font-family: 'Underland', cursive;
+}
+
+.acadia-top {
+		position: absolute;
+    top: -70px;
+    left: -60px;
+    width: 20%;
+    z-index: 1;
+		opacity:.5;
+}
+
+.acadia-bottom {
+		position: absolute;
+    bottom: -70px;
+    right: -60px;
+    width: 20%;
+    z-index: 1;
+    opacity: .5;
+}
+
+.laura-linkwhite a {
+	color:white;
+}
+
+.laura-linkwhite a:hover,
+.laura-linkwhite a:focus {
+	color: #608769!important;
+	text-decoration: underline;
+}
+
+
+.laura-linkcolor a {
+	color: #9b4a2f;
+}
+
+.laura-linkcolor a:hover,
+.laura-linkcolor a:focus {
+	color: #608769!important;
+}
+
+.button .wp-block-button__link {
+background: white;
+font-family: 'Lora', serif;
+border:3px solid #563A4B;
+transition: all .25s linear;
+color: #563A4B;
+font-size:18px!important;
+padding:0!important;
+}
+
+.button:hover .wp-block-button__link, .button:focus .wp-block-button__link {
+	background: #563A4B!important;
+	color: #fff!important;
+}
+
+.button .wp-block-button__link:hover {
+	box-shadow: none!important;
+}
+
+.carousel-item {
+	width: 400px;
+	height: 400px;
+}
+
+.carousel-item h6 {
+		margin-bottom: 0;
+    color: white;
+    font-size: 1.25rem;
+		position: absolute;
+		top: 35%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+		margin: 0 10px 0;
+	}
+
+.carousel-item h4 {
+	margin-top:0;
+	color: white;
+  font-size: 2.8rem;
+	position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
+    margin: 0 10px 0;
+}
+
+.carousel-item h4 a, .carousel-item h6 a, .carousel-item h4 a:hover, .carousel-item h6 a:hover {
+	color:white;
+}
+
+
+.laura-iconseparator::before, .laura-iconseparator::after {
+  position: absolute;
+  top: calc(50% - 1px);
+  Content: "";
+  Background-color: white;
+  height: 2px;
+	width:40%;
+}
+
+.laura-iconseparator::before {
+	left: 0;
+}
+
+.laura-iconseparator::after {
+	right: 0;
+}
+
+@media (max-width: 1023px) {
+
+	.laura-iconseparator::before, .laura-iconseparator::after {
+		width:33%;
+	}
+}
+
+@media (max-width: 425px) {
+
+	.laura-iconseparator::before, .laura-iconseparator::after {
+		width:20%;
+	}
+
+}
+
+
+
+
+@media (max-width: 1023px) {
+	.laura-relative .wp-block-media-text__content
+	{
+		position: relative;
+		width: initial;
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	.laura-relative .wp-block-media-text__content .laura-padding20 {
+		padding:20px!important;
+	}
+
+	.laura-relative .wp-block-media-text__content p {
+		margin-bottom:30px!important;
+		box-shadow: none;
+		border: 0;
+	}
+
+	.laura-relative .wp-block-media-text__content {
+		padding:0;
+	}
+
+	.carousel-item {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+@media (max-width: 959px) {
+
+	.acadia-top {
+		top: -30px;
+    left: -40px;
+	}
+
+	.acadia-bottom {
+		bottom: -40px;
+		right: -20px;
+	}
+
+	}
+
+
+
+
+/* ## Single Post - Quick Links Template
+----------------------*/
+
+.quick-links {
+	width: 50%;
+  float: right;
+  margin: 0 0 2% 2%;
+	padding: 2%;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.quick-links ul {
+	margin: -30px 0 20px;
+	font-size:15px;
+}
+
+.quick-links li {
+	margin-left: 10%;
+	list-style-type: circle;
+}
+
+@media only screen and (max-width: 425px) {
+
+	.quick-links {
+		display: none;
+	}
+
+}
+
+
+/* ## Single Post - Trail Guide Template
+----------------------*/
+
+.arrow-left {
+	padding: 2rem 3rem;
+  background-color: #dedede;
+  display: inline-block;
+  margin-left:20px;
+  position: relative;
+	float:right;
+	border: solid 1px #608769;
+	max-width: 50%;
+}
+
+.arrow-left p {
+	margin: 0;
+}
+
+@media only screen and (max-width: 425px) {
+	.arrow-left {
+		width: 100%;
+		margin-bottom:2rem;
+		max-width: initial;
+		padding: 1rem;
+	}
+}
+
+.excerpt-mobile p {
+	font-family: Lora, sans-serif;
+	font-size: 22px;
+	font-style: italic;
+	font-weight: 400;
+}
+
+@media only screen and (min-width: 426px) {
+	.excerpt-mobile {
+		display:none;
+	}
+}
+
+
+
+/* ## Places Page - Laura Added
+-------------------------------------------------*/
+
+@media only screen and (min-width:600px) and (max-width: 781px) {
+
+	.by-popular .wp-block-column {
+		margin:0;
+	}
+}
+
+.by-popular h4 {
+	margin-top:0;
+	margin-bottom:40px;
+}
+
+.by-region2 {
+	outline: 2px white solid;
+	outline-offset: -10px;
+}
+
+@media only screen and (max-width: 425px) {
+.by-region2 {
+	padding-top:10%!important;
+	padding-left: 10%!important;
+	}
+}
+
+.by-region2 p {
+	margin-bottom:10px;
+}
+
+/* ## Destination Guide
+----------------------*/
+
+@media only screen and (min-width: 960px) {
+.page-template-guide-template .content {
+	width:auto;
+	}
+}
+
+
+.guide-section {
+  padding: 4% 0;
+	margin: 0 auto;
+	max-width: 1180px;
+	position: relative;
+}
+
+.guide-flexcontainer {
+	display: flex;
+	flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 500px) {
+
+.guide-flexcontainer a:last-child, .guide-flexcontainer a:last-child div {
+	margin-right:0;
+	}
+}
+
+.flexcontainer-margin-right a:last-child, .flexcontainer-margin-right a:last-child div{
+	margin-right:4px;
+}
+
+.guidesection-header {
+	margin-bottom: 40px;
+	color:black;
+	font-size:42px;
+	border-bottom: 5px double #608769;
+	margin-left: 10px;
+}
+
+.moarguide-navigation .guide-section {
+	padding-top:0;
+}
+
+.navigationblock {
+	font-size: 22px;
+	background-color: #a1887e;
+  color: white;
+  padding: 15px;
+  margin-right: 4px;
+	margin-top:4px;
+  text-align: center;
+	flex-grow: 1;
+	min-width: 256px;
+}
+
+.navigationblock:hover {
+	background-color: #608769;
+	color:white;
+}
+
+.top5block {
+	background-position: center;
+	background-size: cover;
+	height:300px;
+	width:200px;
+	position:relative;
+	margin-right:20px;
+	margin-bottom: 30px;
+}
+
+.top5description {
+	background: rgba(255, 255, 255, .8);
+  padding: 7% 5%;
+  font-weight: normal;
+}
+
+.top5name {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 0;
+	padding: 7% 5%;
+	color: white;
+	font-size: 26px;
+	text-align: center;
+	width:100%;
+}
+
+.top5block:hover .top5name {
+	text-decoration: underline;
+}
+
+.guide-block {
+	background-color: #f9f9f9;
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	margin-bottom: 30px;
+	height: 200px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	outline: 2px white solid;
+	outline-offset: -10px;
+}
+
+.no-hover:hover {
+	color: #9b4a2f;
+}
+
+.blockicon {
+	height:50px;
+}
+
+.guide-icon {
+	font-size: 2.5rem!important;
+}
+
+.guide-block img {
+	width:50px;
+}
+
+.season-block {
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 30px;
+	height: 300px;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.guide-white {
+	color: white;
+	background-color: rgba(0,0,0,.3);
+	padding: 5%;
+	transition: all .5s;
+}
+
+.season-block:hover h2 {
+	opacity:0;
+}
+
+@media only screen and (max-width: 1200px) {
+	/* destination guide page media */
+	.season-block {
+		height: 200px;
+		width: 200px;
+	}
+}
+
+.guide-post {
+	width: 20%;
+	display:inline-block;
+	vertical-align: top;
+	float:none;
+
+}
+
+.guide-post h4 {
+	padding: 5px 15px 10px;
+	font-size: 22px;
+}
+
+@media only screen and (max-width: 1023px) {
+	/* Mobile */
+
+		.guide-post {
+			width:25%;
+		}
+}
+
+
+@media only screen and (max-width: 768px) {
+		/* Mobile */
+
+	.guide-post {
+		padding: 0 10px;
+		width:50%
+	}
+
+}
+
+
+/* ## Shortcodes - Laura Added
+-------------------------------------------------*/
+
+.shortcode-social {
+	color: #9b4a2f;
+	font-size: 44px;
+	text-align: center;
+	padding-bottom: 28px;
+}
+
+
+.shortcode-social .fa-instagram {
+	margin-right: 15px;
+}
+
+
+.itinerary {
+	background-color: #f9f9f9;
+	margin: 50px auto 50px;
+	max-width: 800px;
+	margin: 0 auto;
+	border-top: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	border-right: 2px solid #ccc;
+	border-left: 2px solid #ccc;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	clear:both;
+	overflow:hidden;
+	margin-bottom:3rem;
+}
+
+.itinerary-info h3 {
+	text-align: center;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	padding: 60px 20px 20px 20px;
+}
+
+.itinerary-info p {
+	padding: 0px 20px;
+	font-size: 18px;
+	margin-bottom: 0px;
+	text-align: center;
+	max-width: 600px;
+  margin: 0 auto;
+}
+
+.itinerary-subscribe .shortcode-mail {
+	padding: 20px;
+}
+
+.itinerary-flex {
+	display:flex;
+	justify-content: center;
+}
+
+@media only screen and (max-width: 425px) {
+	.itinerary-flex {
+		flex-direction: column;
+	}
+
+	.itinerary-flex input.email {
+		max-width: none!important;
+	}
+}
+
+.affiliate {
+	color: #808080;
+  font-size: 15px;
+}
+
+.affiliate2 {
+	text-align:center;
+	margin-bottom:10px;
+}
+
+.readnext {
+  border-left: #ccc solid .3rem;
+  padding: 20px 25px 20px;
+}
+
+.block1 {
+	background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  padding: 2rem;
+	max-width: 500px;
+	margin: 0 auto 30px;
+}
+
+.fancyh2 {
+	font-size: 42px;
+	border-left: solid .3rem;
+	padding: 20px 25px 20px;
+}
+
+.laurahrfancy {
+	border-bottom: 4px double #608769;
+	position: relative;
+	border-top:none;
+}
+
+.laurahrfancy::after {
+		content: '';
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    margin-left: -25px;
+    background: url(images/Separator2.png) center center no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+/* ## Sidebar
+-------------------------------------------------*/
+
+.sidebar {
+	min-width: 300px;
+}
+
+.single .sidebar .entry-title {
+	font-size: 16px;
+}
+
+.sidebar .entry-title a:focus, .sidebar .entry-title a:hover {
+	color: #608769;
+}
+
+.single .sidebar .entry-title {
+	text-align: left;
+}
+
+.sidebar .button {
+ 	padding: 10px 15px;
+}
+
+.side-itineraries {
+		border: solid 1px #a1887e;
+    width: 100%;
+    display: block;
+    margin: 0 auto 10px;
+    padding: 5px;
+    text-align: center;
+    color: #a1887e;
+}
+
+.side-itineraries:active, .side-itineraries:hover {
+	color:white;
+	background: #a1887e;
+}
+
+/* ## General Media Queries - Laura Added
+-------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+
+	.tablet {
+		display: none;
+	}
+
+	.mobile {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.desktop {
+		display: none;
+	}
+
+}
+
+/* ## Custom Colors
+------------------------------------------*/
+
+/* MAIN COLORS */
+
+.has-gray-light-background-color {
+    background-color: #f9f9f9;
+}
+
+.has-gray-light-color {
+    color: #f9f9f9;
+}
+
+.has-warm-gray-light-background-color {
+    background-color: #EEEBEA;
+}
+
+.has-warm-gray-light-color {
+    color: #EEEBEA;
+}
+
+.has-warm-gray-dark-background-color {
+    background-color: #a1887e;
+}
+
+.has-warm-gray-dark-color {
+    color: #a1887e;
+}
+
+.has-warm-red-background-color {
+    background-color: #9b4a2f;
+}
+
+.has-warm-red-color {
+    color: #9b4a2f;
+}
+
+.has-light-green-background-color {
+    background-color: #608769;
+}
+
+.has-light-green-color {
+    color: #608769;
+}
+
+.has-dark-green-background-color {
+    background-color: #1e402e;
+}
+
+.has-dark-green-color {
+    color: #1e402e;
+}
+
+.has-light-purple-background-color {
+    background-color: #563A4B;
+}
+
+.has-light-purple-color {
+    color: #563A4B;
+}
+
+
+/* ALT COLORS */
+
+.has-warm-gray-alt-background-color {
+    background-color: #f6f3f0;
+}
+
+.has-warm-gray-alt-color {
+    color: #f6f3f0;
+}
+
+.has-gray-light-alt-background-color {
+    background-color: #ccc;
+}
+
+.has-gray-light-alt-color {
+    color: #ccc;
+}
+
+.has-gray-text-alt-background-color {
+    background-color: #737373;
+}
+
+.has-gray-text-alt-color {
+    color: #737373;
+}
+
+.has-normal-text-background-color {
+    background-color: #333;
+}
+
+.has-normal-text-color {
+    color: #333;
+}
