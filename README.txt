@@ -8,7 +8,7 @@ Theme utilizes:
 - JavaScript
 - Gutenberg Blocks
 - Kadence Blocks
-- Advanced Custom Fields
+- Advanced Custom Fields: https://www.dropbox.com/s/jq85u8guagggdev/acf-export-2021-05-10.json?dl=0
 - Font Awesome (SVG)
 - Custom Fonts
 
