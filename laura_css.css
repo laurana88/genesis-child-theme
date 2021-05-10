@@ -116,14 +116,18 @@ a:focus {
 	text-decoration: none;
 }
 
+.is-style-outline>.wp-block-button__link:not(.has-text-color) {
+	color: #563A4B;
+}
+
 .button, .button:visited, .button:active {
 	border-radius: 2px;
 	background: transparent;
 	font-family: 'Lora', serif;
 	font-weight: 700;
 	text-align:center;
-  vertical-align: middle;
-  overflow: hidden;
+  	vertical-align: middle;
+  	overflow: hidden;
 	text-transform: capitalize;
 	border:3px solid #563A4B;
 	transition: all .25s linear;
@@ -134,7 +138,7 @@ a:focus {
 .button:hover, .button:focus {
 	background: #563A4B;
 	border:3px solid #563A4B;
-	color: #fff!important;
+	color: #fff;
 }
 
 .button2, .button2:visited, .button2active {
@@ -158,7 +162,6 @@ a:focus {
 	background-color:transparent;
 	color: #563A4B!important;
 }
-
 
 /* ## Site Containers - Laura Edited
 --------------------------------------------- */
@@ -1587,39 +1590,14 @@ padding:0!important;
 	box-shadow: none!important;
 }
 
-.carousel-item {
-	width: 400px;
-	height: 400px;
-}
+/* Carousel Gallery for Explore */
 
-.carousel-item h6 {
-		margin-bottom: 0;
-    color: white;
-    font-size: 1.25rem;
-		position: absolute;
-		top: 35%;
-		left: 0;
-		right: 0;
-		text-align: center;
-		text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
-		margin: 0 10px 0;
-	}
-
-.carousel-item h4 {
-	margin-top:0;
-	color: white;
-  font-size: 2.8rem;
-	position: absolute;
-    top: 45%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    text-shadow: 0px 6px 6.3px rgba(0,0,0,0.36);
-    margin: 0 10px 0;
-}
-
-.carousel-item h4 a, .carousel-item h6 a, .carousel-item h4 a:hover, .carousel-item h6 a:hover {
-	color:white;
+.explore-gallery .kadence-blocks-gallery-item__caption em {
+	font-size: 1.25rem;
+    font-family: 'underland';
+    text-transform: lowercase;
+    font-weight: normal;
+	
 }
 
 
@@ -2076,10 +2054,14 @@ padding:0!important;
 	margin-bottom:10px;
 }
 
-.readnext {
+.readnext, .wp-block-laura-readnext {
   border-left: #ccc solid .3rem;
   padding: 20px 25px 20px;
 }
+
+.wp-block-laura-readnext::before {
+	content: "Read Next: ";
+  }
 
 .block1 {
 	background-color: #f9f9f9;

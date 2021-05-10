@@ -102,19 +102,11 @@ add_action('wp_enqueue_scripts','my_theme_scripts_function');
 function my_theme_scripts_function() {
 
 	// My search
-	wp_enqueue_script( 'laura-search-script', get_stylesheet_directory_uri() . '/js/laura-search.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'laura-search-script', get_stylesheet_directory_uri() . '/js/laura-search.js', array(), '1.0.0', true);
 
 	// My css
 	wp_enqueue_style('laura_css', get_stylesheet_directory_uri() . '/laura_css.css');
   	wp_enqueue_style('laura_fonts_stylesheet', get_stylesheet_directory_uri() . '/laura_fonts_stylesheet.css');
-
-	// Test of adding my smooth scrolling javascript
-	wp_enqueue_script( 'laurasmoothscrollscript', get_stylesheet_directory_uri() . '/js/laura-smooth-scroll.js', array( 'jquery' ), '1.0.0', true );
-
-//Flickity
-	wp_enqueue_style('flickity_css', get_stylesheet_directory_uri() . '/js/flickity.min.css');
-	wp_enqueue_script( 'flickity_js', get_stylesheet_directory_uri() . '/js/flickity.pkgd.min.js', array( 'jquery' ), '1.0.0', true );
-	wp_enqueue_script( 'laura_flickity_js', get_stylesheet_directory_uri() . '/js/laura-flickity.js', array( 'jquery' ), '1.0.0', true );
 
 }
 
@@ -123,7 +115,7 @@ function my_theme_scripts_function() {
 add_action( 'wp_enqueue_scripts', 'remove_atomic_block_css');
 
 function remove_atomic_block_css(){
-    wp_dequeue_style( 'atomic-blocks-fontawesome' );
+    wp_dequeue_style( 'genesis-blocks-fontawesome' );
 }
 
 /**
