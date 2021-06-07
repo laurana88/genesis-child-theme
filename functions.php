@@ -514,7 +514,7 @@ add_shortcode('block1', 'laura_block1_function');
 
 function laura_block1_function( $atts, $content = null ) {
 
-		return "<div class='block1'>" . $content . "</div>";
+	return "<div class='block1'>" . $content . "</div>";
 
 }
 
